@@ -22,6 +22,7 @@ int main()
 
 	const uint8_t* code = reinterpret_cast<const uint8_t*>(a.make());
 	const uint8_t primer[] = "\x55\x8b\xec\xb8\x01\x00\x00\x00\xff\xc0\x8b\xd8\xc1\xe0\x05\xc1\xe3\x03\xf7\xe3\x8b\xe5\x5d\xc3";
+	memcmp(code, primer, sizeof(primer));
 
-	return memcmp(code, primer, sizeof(primer));
+	return 0;
 }
