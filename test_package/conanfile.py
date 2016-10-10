@@ -2,7 +2,7 @@ from conans import ConanFile, CMake
 import os
 
 channel = os.getenv("CONAN_CHANNEL", "stable")
-username = os.getenv("CONAN_USERNAME", "wi3ard")
+username = os.getenv("CONAN_USERNAME", "Wi3ard")
 
 class AsmjitReuseConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"

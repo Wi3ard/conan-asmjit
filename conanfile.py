@@ -32,7 +32,6 @@ asmjit_build_test=False
 
         self.output.info("Copying CMakeLists.txt")
         os.unlink("asmjit/CMakeLists.txt")
-        #shutil.copy("%s/cmake/CMakeLists.txt" % (self.conanfile_directory), "asmjit")
         shutil.move("cmake/CMakeLists.txt", "asmjit")
 
     def build(self):
