@@ -62,3 +62,6 @@ asmjit_build_test=False
 
     def package_info(self):
         self.cpp_info.libs = ["asmjit"]
+
+        if not self.options.shared:
+            self.cpp_info.defines.extend(["ASMJIT_STATIC=ON"])
