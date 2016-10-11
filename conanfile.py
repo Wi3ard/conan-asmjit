@@ -32,7 +32,6 @@ asmjit_build_test=False
 
         self.output.info("Copying CMakeLists.txt")
         os.unlink("asmjit/CMakeLists.txt")
-        #shutil.copy("%s/cmake/CMakeLists.txt" % (self.conanfile_directory), "asmjit")
         shutil.move("cmake/CMakeLists.txt", "asmjit")
 
     def build(self):
@@ -58,8 +57,12 @@ asmjit_build_test=False
 
     def package(self):
         self.copy("*.h", dst="include", src="install/include")
+        self.copy("*.dll", dst="bin", src="install/lib")
         self.copy("*.lib", dst="lib", src="install/lib")
         self.copy("*.a", dst="lib", src="install/lib")
 
     def package_info(self):
         self.cpp_info.libs = ["asmjit"]
+
+        if not self.options.shared:
+            self.cpp_info.defines.extend(["ASMJIT_STATIC=ON"])
