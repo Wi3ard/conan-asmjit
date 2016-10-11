@@ -57,6 +57,7 @@ asmjit_build_test=False
 
     def package(self):
         self.copy("*.h", dst="include", src="install/include")
+        self.copy("*.dll", dst="bin", src="install/lib")
         self.copy("*.lib", dst="lib", src="install/lib")
         self.copy("*.a", dst="lib", src="install/lib")
 
