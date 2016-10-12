@@ -6,7 +6,6 @@ class asmjitConan(ConanFile):
     name = "asmjit"
     version = "1.0.0"
     url="https://github.com/Wi3ard/conan-asmjit"
-    license="The MIT License (MIT) https://opensource.org/licenses/MIT"
     settings = "os", "compiler", "build_type", "arch"
     exports = "cmake/*"
     options = {"shared": [True, False],
