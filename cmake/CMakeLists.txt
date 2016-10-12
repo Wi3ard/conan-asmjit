@@ -93,8 +93,8 @@ set(ASMJIT_LIBS)                                # Asmjit dependencies with asmji
 
 # Internal, never use.
 set(ASMJIT_D "-D")                              # Used to define a C/C++ preprocessor parameter (-D or /D).
-set(ASMJIT_PRIVATE_CFLAGS)                      # Compiler flags independent of build type.
-set(ASMJIT_PRIVATE_LFLAGS "")                   # Linker flags used by the library and tests.
+set(ASMJIT_PRIVATE_CFLAGS ${CONAN_CXX_FLAGS})   # Compiler flags independent of build type.
+set(ASMJIT_PRIVATE_LFLAGS ${CONAN_SHARED_LINKER_FLAGS})  # Linker flags used by the library and tests.
 
 set(ASMJIT_PRIVATE_CFLAGS_DBG)                  # Compiler flags used only by debug build.
 set(ASMJIT_PRIVATE_CFLAGS_REL)                  # Compiler flags used only by release build.
