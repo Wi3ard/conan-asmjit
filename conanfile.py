@@ -60,6 +60,7 @@ asmjit_build_test=False
         self.copy("*.lib", dst="lib", src="install/lib")
         self.copy("*.a", dst="lib", src="install/lib")
         self.copy("*.so", dst="lib", src="install/lib")
+        self.copy("*.dylib", dst="lib", src="install/lib")
 
     def package_info(self):
         self.cpp_info.libs = ["asmjit"]
