@@ -6,7 +6,6 @@ class asmjitConan(ConanFile):
     name = "asmjit"
     version = "1.0.0"
     url="https://github.com/Wi3ard/conan-asmjit"
-    license="The MIT License (MIT) https://opensource.org/licenses/MIT"
     settings = "os", "compiler", "build_type", "arch"
     exports = "cmake/*"
     options = {"shared": [True, False],
@@ -60,6 +59,8 @@ asmjit_build_test=False
         self.copy("*.dll", dst="bin", src="install/lib")
         self.copy("*.lib", dst="lib", src="install/lib")
         self.copy("*.a", dst="lib", src="install/lib")
+        self.copy("*.so", dst="lib", src="install/lib")
+        self.copy("*.dylib", dst="lib", src="install/lib")
 
     def package_info(self):
         self.cpp_info.libs = ["asmjit"]
